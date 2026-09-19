@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 import net.md_5.bungee.api.ChatColor;
 
 public class Utils {
-    
+
     public static String colorize(String msg) {
         Matcher match = Pattern.compile("#[a-fA-F0-9]{6}").matcher(msg);
         while (match.find()) {

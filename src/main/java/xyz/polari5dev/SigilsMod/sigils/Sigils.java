@@ -15,9 +15,15 @@ public class Sigils {
 
         switch (type.toLowerCase()) {
             case "strength":
-                meta.setDisplayName(ChatColor.RED + "Strength Sigil");
+                meta.setDisplayName(ChatColor.YELLOW + "Strength Sigil");
                 meta.setLore(java.util.List.of(
-                        ChatColor.GRAY + "Grants Strength III."));
+                        ChatColor.GRAY + "Grants Strength III while held."));
+                break;
+
+            case "speed":
+                meta.setDisplayName(ChatColor.BLUE + "Speed Sigil");
+                meta.setLore(java.util.List.of(
+                        ChatColor.GRAY + "Grants Speed III while held."));
                 break;
 
             default:

@@ -36,6 +36,7 @@ public class PlayerListener implements Listener {
             for (Player player : Bukkit.getOnlinePlayers()) {
 
                 boolean hasStrengthSigil = false;
+                boolean hasSpeedSigil = false;
 
                 for (ItemStack item : player.getInventory().getContents()) {
 
@@ -51,6 +52,11 @@ public class PlayerListener implements Listener {
                         hasStrengthSigil = true;
                         break;
                     }
+
+                    if ("speed".equals(type)) {
+                        hasSpeedSigil = true;
+                        break;
+                    }
                 }
 
                 if (hasStrengthSigil) {
@@ -63,8 +69,18 @@ public class PlayerListener implements Listener {
                                     false,
                                     true));
                 }
-            }
 
+                if (hasSpeedSigil) {
+                    player.addPotionEffect(
+                            new PotionEffect(
+                                    PotionEffectType.SPEED,
+                                    40,
+                                    2,
+                                    false,
+                                    false,
+                                    true));
+                }
+            }
         }, 0L, 20L);
     }
 
