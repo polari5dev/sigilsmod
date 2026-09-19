@@ -1,2 +1,2 @@
-# charmsmod
-CharmsSMP Paper plugin.
+# sigilsmod
+SigilsSMP Paper plugin.
