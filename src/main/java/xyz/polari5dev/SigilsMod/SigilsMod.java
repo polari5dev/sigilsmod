@@ -14,7 +14,7 @@ public class SigilsMod extends JavaPlugin {
         PluginManager.getInstance().initialize();
 
         // Register listeners
-        getServer().getPluginManager().registerEvents(new PlayerListener(), this);
+        getServer().getPluginManager().registerEvents(new PlayerListener(this), this);
 
         getLogger().info(getDescription().getName() + " has been enabled! Hello, User!");
 
