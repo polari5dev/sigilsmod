@@ -1,0 +1,2 @@
+# sigilsmod
+SigilsSMP Paper plugin.
