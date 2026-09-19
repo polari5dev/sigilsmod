@@ -1,1 +1,22 @@
+# Gradle
+.gradle/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# Java
+*.class
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local/server files
+run/
+logs/
+
+# core :3
 /core
