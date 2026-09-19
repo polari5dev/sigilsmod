@@ -26,6 +26,12 @@ public class Sigils {
                         ChatColor.GRAY + "Grants Speed III while held."));
                 break;
 
+            case "vitality":
+                meta.setDisplayName(ChatColor.RED + "Vitality Sigil");
+                meta.setLore(java.util.List.of(
+                        ChatColor.GRAY + "Grants Health Boost II while held."));
+                break;
+
             default:
                 return null;
         }

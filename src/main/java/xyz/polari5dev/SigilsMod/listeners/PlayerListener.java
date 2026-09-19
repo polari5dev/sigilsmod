@@ -37,6 +37,7 @@ public class PlayerListener implements Listener {
 
                 boolean hasStrengthSigil = false;
                 boolean hasSpeedSigil = false;
+                boolean hasVitalitySigil = false;
 
                 for (ItemStack item : player.getInventory().getContents()) {
 
@@ -57,6 +58,11 @@ public class PlayerListener implements Listener {
                         hasSpeedSigil = true;
                         break;
                     }
+
+                    if ("vitality".equals(type)) {
+                        hasVitalitySigil = true;
+                        break;
+                    }
                 }
 
                 if (hasStrengthSigil) {
@@ -74,6 +80,17 @@ public class PlayerListener implements Listener {
                     player.addPotionEffect(
                             new PotionEffect(
                                     PotionEffectType.SPEED,
+                                    40,
+                                    2,
+                                    false,
+                                    false,
+                                    true));
+                }
+
+                if (hasVitalitySigil) {
+                    player.addPotionEffect(
+                            new PotionEffect(
+                                    PotionEffectType.HEALTH_BOOST,
                                     40,
                                     2,
                                     false,
