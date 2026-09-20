@@ -39,6 +39,19 @@ public class PlayerListener implements Listener {
                 boolean hasSpeedSigil = false;
                 boolean hasVitalitySigil = false;
 
+                // add
+                boolean hasLuckSigil = false;
+                boolean hasHasteSigil = false;
+                boolean hasMendingSigil = false;
+                boolean hasPoisonSigil = false;
+                boolean hasMoltenSigil = false;
+                boolean hasHardenedSigil = false;
+                boolean hasEnduranceSigil = false;
+                boolean hasTurtleSigil = false;
+                boolean hasConcealmentSigil = false;
+
+                boolean hasVeritySigil = false;
+
                 for (ItemStack item : player.getInventory().getContents()) {
 
                     if (item == null || !item.hasItemMeta()) {
@@ -49,19 +62,21 @@ public class PlayerListener implements Listener {
                             .getPersistentDataContainer()
                             .get(sigilKey, PersistentDataType.STRING);
 
-                    if ("strength".equals(type)) {
-                        hasStrengthSigil = true;
-                        break;
-                    }
+                    switch (type) {
+                        case "strength" -> hasStrengthSigil = true;
+                        case "speed" -> hasSpeedSigil = true;
+                        case "vitality" -> hasVitalitySigil = true;
+                        case "verity" -> hasVeritySigil = true;
+                        case "luck" -> hasLuckSigil = true;
+                        case "haste" -> hasHasteSigil = true;
+                        case "mending" -> hasMendingSigil = true;
+                        case "poison" -> hasPoisonSigil = true;
+                        case "molten" -> hasMoltenSigil = true;
+                        case "hardened" -> hasHardenedSigil = true;
+                        case "endurance" -> hasEnduranceSigil = true;
+                        case "turtle" -> hasTurtleSigil = true;
+                        case "concealment" -> hasConcealmentSigil = true;
 
-                    if ("speed".equals(type)) {
-                        hasSpeedSigil = true;
-                        break;
-                    }
-
-                    if ("vitality".equals(type)) {
-                        hasVitalitySigil = true;
-                        break;
                     }
                 }
 
@@ -92,7 +107,141 @@ public class PlayerListener implements Listener {
                             new PotionEffect(
                                     PotionEffectType.HEALTH_BOOST,
                                     40,
+                                    1,
+                                    false,
+                                    false,
+                                    true));
+                }
+
+                if (hasLuckSigil) {
+                    player.addPotionEffect(
+                            new PotionEffect(
+                                    PotionEffectType.LUCK,
+                                    40,
+                                    4,
+                                    false,
+                                    false,
+                                    true));
+                }
+
+                if (hasHasteSigil) {
+                    player.addPotionEffect(
+                            new PotionEffect(
+                                    PotionEffectType.HASTE,
+                                    40,
                                     2,
+                                    false,
+                                    false,
+                                    true));
+                }
+
+                if (hasMendingSigil) {
+                    player.addPotionEffect(
+                            new PotionEffect(
+                                    PotionEffectType.REGENERATION,
+                                    40,
+                                    2,
+                                    false,
+                                    false,
+                                    true));
+                }
+
+                if (hasPoisonSigil) {
+                    player.addPotionEffect(
+                            new PotionEffect(
+                                    PotionEffectType.POISON,
+                                    40,
+                                    2,
+                                    false,
+                                    false,
+                                    true));
+                }
+
+                if (hasMoltenSigil) {
+                    player.addPotionEffect(
+                            new PotionEffect(
+                                    PotionEffectType.FIRE_RESISTANCE,
+                                    40,
+                                    0,
+                                    false,
+                                    false,
+                                    true));
+                }
+
+                if (hasHardenedSigil) {
+                    player.addPotionEffect(
+                            new PotionEffect(
+                                    PotionEffectType.RESISTANCE,
+                                    40,
+                                    1,
+                                    false,
+                                    false,
+                                    true));
+                }
+
+                if (hasEnduranceSigil) {
+                    player.addPotionEffect(
+                            new PotionEffect(
+                                    PotionEffectType.SATURATION,
+                                    40,
+                                    1,
+                                    false,
+                                    false,
+                                    true));
+                }
+
+                if (hasTurtleSigil) {
+                    player.addPotionEffect(
+                            new PotionEffect(
+                                    PotionEffectType.RESISTANCE,
+                                    40,
+                                    4,
+                                    false,
+                                    false,
+                                    true));
+                    player.addPotionEffect(
+                            new PotionEffect(
+                                    PotionEffectType.SLOWNESS,
+                                    40,
+                                    3,
+                                    false,
+                                    false,
+                                    true));
+
+                }
+
+                if (hasConcealmentSigil) {
+                    player.addPotionEffect(
+                            new PotionEffect(
+                                    PotionEffectType.INVISIBILITY,
+                                    40,
+                                    0,
+                                    false,
+                                    false,
+                                    true));
+                }
+
+                /*
+                 * hey
+                 * its me
+                 * its verity
+                 * 
+                 * ask me anything
+                 * (i got a question)
+                 * 
+                 * i know
+                 * about
+                 * a million things
+                 * 
+                 * i'll do everything
+                 * 
+                 */
+                if (hasVeritySigil) {
+                    player.addPotionEffect(
+                            new PotionEffect(
+                                    PotionEffectType.INSTANT_DAMAGE,
+                                    100,
+                                    255,
                                     false,
                                     false,
                                     true));
