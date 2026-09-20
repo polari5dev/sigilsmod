@@ -2,7 +2,6 @@ package xyz.polari5dev.SigilsMod;
 
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
-import org.bukkit.block.Block;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.plugin.java.JavaPlugin;
 import xyz.polari5dev.SigilsMod.managers.PluginManager;
