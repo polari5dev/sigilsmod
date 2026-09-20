@@ -41,6 +41,41 @@ public class SigilsMod extends JavaPlugin {
         recipe.setIngredient('N', Material.NETHERITE_INGOT);
         recipe.setIngredient('S', Material.NETHER_STAR);
         recipe.setIngredient('b', Material.BLAZE_POWDER);
+
+        getServer().addRecipe(recipe);
+
+        key = new NamespacedKey(this, "speed_sigil");
+
+        recipe = new ShapedRecipe(key, Sigils.create("speed"));
+
+        recipe.shape(
+                "SsS",
+                "N D",
+                "SES");
+
+        recipe.setIngredient('D', Material.DIAMOND_BLOCK);
+        recipe.setIngredient('E', Material.ENDER_EYE);
+        recipe.setIngredient('N', Material.NETHERITE_INGOT);
+        recipe.setIngredient('S', Material.NETHER_STAR);
+        recipe.setIngredient('s', Material.SUGAR);
+
+        getServer().addRecipe(recipe);
+
+        key = new NamespacedKey(this, "vitality_sigil");
+
+        recipe = new ShapedRecipe(key, Sigils.create("vitality"));
+
+        recipe.shape(
+                "SaS",
+                "N D",
+                "SES");
+
+        recipe.setIngredient('D', Material.DIAMOND_BLOCK);
+        recipe.setIngredient('E', Material.ENDER_EYE);
+        recipe.setIngredient('N', Material.NETHERITE_INGOT);
+        recipe.setIngredient('S', Material.NETHER_STAR);
+        recipe.setIngredient('a', Material.ENCHANTED_GOLDEN_APPLE);
+
         getServer().addRecipe(recipe);
     }
 
