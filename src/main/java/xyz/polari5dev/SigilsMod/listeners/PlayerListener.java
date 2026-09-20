@@ -38,8 +38,6 @@ public class PlayerListener implements Listener {
                 boolean hasStrengthSigil = false;
                 boolean hasSpeedSigil = false;
                 boolean hasVitalitySigil = false;
-
-                // add
                 boolean hasLuckSigil = false;
                 boolean hasHasteSigil = false;
                 boolean hasMendingSigil = false;
