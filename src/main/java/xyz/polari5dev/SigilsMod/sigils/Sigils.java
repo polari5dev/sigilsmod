@@ -18,6 +18,8 @@ public class Sigils {
                 meta.setDisplayName(ChatColor.YELLOW + "Strength Sigil");
                 meta.setLore(java.util.List.of(
                         ChatColor.GRAY + "Grants Strength III while held."));
+
+                meta.setItemModel(new NamespacedKey("minecraft", "strength_sigil"));
                 break;
 
             case "speed":
@@ -97,7 +99,7 @@ public class Sigils {
                 return null;
         }
 
-        // Store what kind of Sigil this is
+        // store sigil type shit
         NamespacedKey key = new NamespacedKey("sigilsmod", "sigil_type");
         meta.getPersistentDataContainer().set(
                 key,
