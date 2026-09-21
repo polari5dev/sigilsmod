@@ -1,0 +1,8 @@
+main: xyz.polari5dev.SigilsMod.SigilsMod
+version: 0.0.1
+name: SigilsMod
+author: polari5dev
+description: minecwaft
+api-version: 1.21
+
+
