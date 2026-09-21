@@ -60,11 +60,17 @@ public class PlayerListener implements Listener {
                             .getPersistentDataContainer()
                             .get(sigilKey, PersistentDataType.STRING);
 
+                    // test for bug.........
+                    // Bukkit.getLogger().info("SIGIL TYPE: " + type);
+
+                    if (type == null) {
+                       continue;
+                    }
+
                     switch (type) {
                         case "strength" -> hasStrengthSigil = true;
                         case "speed" -> hasSpeedSigil = true;
                         case "vitality" -> hasVitalitySigil = true;
-                        case "verity" -> hasVeritySigil = true;
                         case "luck" -> hasLuckSigil = true;
                         case "haste" -> hasHasteSigil = true;
                         case "mending" -> hasMendingSigil = true;
