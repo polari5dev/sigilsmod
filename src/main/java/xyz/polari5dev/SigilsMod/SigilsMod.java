@@ -229,7 +229,7 @@ public class SigilsMod extends JavaPlugin {
                 recipe.setIngredient('E', Material.ENDER_EYE);
                 recipe.setIngredient('N', Material.NETHERITE_INGOT);
                 recipe.setIngredient('S', Material.NETHER_STAR);
-                recipe.setIngredient('e', Material.FERMENTED_SPIDER_EYE)
+                recipe.setIngredient('e', Material.FERMENTED_SPIDER_EYE);
                 recipe.setIngredient('c', Material.GOLDEN_CARROT);
                 getServer().addRecipe(recipe);
         }
