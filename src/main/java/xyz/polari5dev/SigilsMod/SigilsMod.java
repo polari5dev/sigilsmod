@@ -112,6 +112,126 @@ public class SigilsMod extends JavaPlugin {
                 recipe.setIngredient('S', Material.NETHER_STAR);
                 recipe.setIngredient('p', Material.NETHERITE_PICKAXE);
                 getServer().addRecipe(recipe);
+
+                // mending !!!!!!!!!!!!!!!!
+                key = new NamespacedKey(this, "mending_sigil");
+
+                recipe = new ShapedRecipe(key, Sigils.create("mending"));
+
+                recipe.shape(
+                                "SsS",
+                                "N D",
+                                "SES");
+
+                recipe.setIngredient('D', Material.DIAMOND_BLOCK);
+                recipe.setIngredient('E', Material.ENDER_EYE);
+                recipe.setIngredient('N', Material.NETHERITE_INGOT);
+                recipe.setIngredient('S', Material.NETHER_STAR);
+                recipe.setIngredient('s', Material.AMETHYST_SHARD);
+                getServer().addRecipe(recipe);
+
+                // poison
+                key = new NamespacedKey(this, "poison_sigil");
+
+                recipe = new ShapedRecipe(key, Sigils.create("haste"));
+
+                recipe.shape(
+                                "SeS",
+                                "N D",
+                                "SES");
+
+                recipe.setIngredient('D', Material.DIAMOND_BLOCK);
+                recipe.setIngredient('E', Material.ENDER_EYE);
+                recipe.setIngredient('N', Material.NETHERITE_INGOT);
+                recipe.setIngredient('S', Material.NETHER_STAR);
+                recipe.setIngredient('e', Material.SPIDER_EYE);
+                getServer().addRecipe(recipe);
+
+                // molten
+                key = new NamespacedKey(this, "molten_sigil");
+
+                recipe = new ShapedRecipe(key, Sigils.create("molten"));
+
+                recipe.shape(
+                                "ScS",
+                                "N D",
+                                "SES");
+
+                recipe.setIngredient('D', Material.DIAMOND_BLOCK);
+                recipe.setIngredient('E', Material.ENDER_EYE);
+                recipe.setIngredient('N', Material.NETHERITE_INGOT);
+                recipe.setIngredient('S', Material.NETHER_STAR);
+                recipe.setIngredient('c', Material.FIRE_CHARGE);
+                getServer().addRecipe(recipe);
+
+                // hardened
+                key = new NamespacedKey(this, "hardened_sigil");
+
+                recipe = new ShapedRecipe(key, Sigils.create("hardened"));
+
+                recipe.shape(
+                                "SsS",
+                                "N D",
+                                "SES");
+
+                recipe.setIngredient('D', Material.DIAMOND_BLOCK);
+                recipe.setIngredient('E', Material.ENDER_EYE);
+                recipe.setIngredient('N', Material.NETHERITE_INGOT);
+                recipe.setIngredient('S', Material.NETHER_STAR);
+                recipe.setIngredient('s', Material.SHIELD);
+                getServer().addRecipe(recipe);
+
+                // endurance
+                key = new NamespacedKey(this, "endurance_sigil");
+
+                recipe = new ShapedRecipe(key, Sigils.create("endurance"));
+
+                recipe.shape(
+                                "SgS",
+                                "N D",
+                                "SES");
+
+                recipe.setIngredient('D', Material.DIAMOND_BLOCK);
+                recipe.setIngredient('E', Material.ENDER_EYE);
+                recipe.setIngredient('N', Material.NETHERITE_INGOT);
+                recipe.setIngredient('S', Material.NETHER_STAR);
+                recipe.setIngredient('g', Material.GOLDEN_CARROT);
+                getServer().addRecipe(recipe);
+
+                // turtle
+                key = new NamespacedKey(this, "turtle_sigil");
+
+                recipe = new ShapedRecipe(key, Sigils.create("turtle"));
+
+                recipe.shape(
+                                "SsS",
+                                "N D",
+                                "SES");
+
+                recipe.setIngredient('D', Material.DIAMOND_BLOCK);
+                recipe.setIngredient('E', Material.ENDER_EYE);
+                recipe.setIngredient('N', Material.NETHERITE_INGOT);
+                recipe.setIngredient('S', Material.NETHER_STAR);
+                recipe.setIngredient('s', Material.TURTLE_SCUTE);
+                getServer().addRecipe(recipe);
+
+                // concealement
+                key = new NamespacedKey(this, "concealment_sigil");
+
+                recipe = new ShapedRecipe(key, Sigils.create("concealment"));
+
+                recipe.shape(
+                                "ScS",
+                                "NeD",
+                                "SES");
+
+                recipe.setIngredient('D', Material.DIAMOND_BLOCK);
+                recipe.setIngredient('E', Material.ENDER_EYE);
+                recipe.setIngredient('N', Material.NETHERITE_INGOT);
+                recipe.setIngredient('S', Material.NETHER_STAR);
+                recipe.setIngredient('e', Material.FERMENTED_SPIDER_EYE)
+                recipe.setIngredient('c', Material.GOLDEN_CARROT);
+                getServer().addRecipe(recipe);
         }
 
         @Override
