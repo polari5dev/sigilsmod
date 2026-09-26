@@ -88,6 +88,14 @@ public class PlayerListener implements Listener {
                 if (hasStrengthSigil) {
                     player.addPotionEffect(
                             new PotionEffect(
+                                    PotionEffectType.GLOWING,
+                                    40,
+                                    4,
+                                    false,
+                                    false,
+                                    true));
+                    player.addPotionEffect(
+                            new PotionEffect(
                                     PotionEffectType.STRENGTH,
                                     40,
                                     2,
@@ -97,6 +105,14 @@ public class PlayerListener implements Listener {
                 }
 
                 if (hasSpeedSigil) {
+                    player.addPotionEffect(
+                            new PotionEffect(
+                                    PotionEffectType.GLOWING,
+                                    40,
+                                    4,
+                                    false,
+                                    false,
+                                    true));
                     player.addPotionEffect(
                             new PotionEffect(
                                     PotionEffectType.SPEED,
@@ -110,6 +126,14 @@ public class PlayerListener implements Listener {
                 if (hasVitalitySigil) {
                     player.addPotionEffect(
                             new PotionEffect(
+                                    PotionEffectType.GLOWING,
+                                    40,
+                                    4,
+                                    false,
+                                    false,
+                                    true));
+                    player.addPotionEffect(
+                            new PotionEffect(
                                     PotionEffectType.HEALTH_BOOST,
                                     40,
                                     1,
@@ -119,6 +143,14 @@ public class PlayerListener implements Listener {
                 }
 
                 if (hasLuckSigil) {
+                    player.addPotionEffect(
+                            new PotionEffect(
+                                    PotionEffectType.GLOWING,
+                                    40,
+                                    4,
+                                    false,
+                                    false,
+                                    true));
                     player.addPotionEffect(
                             new PotionEffect(
                                     PotionEffectType.LUCK,
@@ -132,6 +164,14 @@ public class PlayerListener implements Listener {
                 if (hasHasteSigil) {
                     player.addPotionEffect(
                             new PotionEffect(
+                                    PotionEffectType.GLOWING,
+                                    40,
+                                    4,
+                                    false,
+                                    false,
+                                    true));
+                    player.addPotionEffect(
+                            new PotionEffect(
                                     PotionEffectType.HASTE,
                                     40,
                                     2,
@@ -141,6 +181,14 @@ public class PlayerListener implements Listener {
                 }
 
                 if (hasMendingSigil) {
+                    player.addPotionEffect(
+                            new PotionEffect(
+                                    PotionEffectType.GLOWING,
+                                    40,
+                                    4,
+                                    false,
+                                    false,
+                                    true));
                     player.addPotionEffect(
                             new PotionEffect(
                                     PotionEffectType.REGENERATION,
@@ -154,6 +202,14 @@ public class PlayerListener implements Listener {
                 if (hasPoisonSigil) {
                     player.addPotionEffect(
                             new PotionEffect(
+                                    PotionEffectType.GLOWING,
+                                    40,
+                                    4,
+                                    false,
+                                    false,
+                                    true));
+                    player.addPotionEffect(
+                            new PotionEffect(
                                     PotionEffectType.POISON,
                                     40,
                                     2,
@@ -163,6 +219,14 @@ public class PlayerListener implements Listener {
                 }
 
                 if (hasMoltenSigil) {
+                    player.addPotionEffect(
+                            new PotionEffect(
+                                    PotionEffectType.GLOWING,
+                                    40,
+                                    4,
+                                    false,
+                                    false,
+                                    true));
                     player.addPotionEffect(
                             new PotionEffect(
                                     PotionEffectType.FIRE_RESISTANCE,
@@ -176,6 +240,14 @@ public class PlayerListener implements Listener {
                 if (hasHardenedSigil) {
                     player.addPotionEffect(
                             new PotionEffect(
+                                    PotionEffectType.GLOWING,
+                                    40,
+                                    4,
+                                    false,
+                                    false,
+                                    true));
+                    player.addPotionEffect(
+                            new PotionEffect(
                                     PotionEffectType.RESISTANCE,
                                     40,
                                     1,
@@ -187,6 +259,14 @@ public class PlayerListener implements Listener {
                 if (hasEnduranceSigil) {
                     player.addPotionEffect(
                             new PotionEffect(
+                                    PotionEffectType.GLOWING,
+                                    40,
+                                    4,
+                                    false,
+                                    false,
+                                    true));
+                    player.addPotionEffect(
+                            new PotionEffect(
                                     PotionEffectType.SATURATION,
                                     40,
                                     1,
@@ -196,6 +276,14 @@ public class PlayerListener implements Listener {
                 }
 
                 if (hasTurtleSigil) {
+                    player.addPotionEffect(
+                            new PotionEffect(
+                                    PotionEffectType.GLOWING,
+                                    40,
+                                    4,
+                                    false,
+                                    false,
+                                    true));
                     player.addPotionEffect(
                             new PotionEffect(
                                     PotionEffectType.RESISTANCE,
@@ -216,6 +304,14 @@ public class PlayerListener implements Listener {
                 }
 
                 if (hasConcealmentSigil) {
+                    player.addPotionEffect(
+                            new PotionEffect(
+                                    PotionEffectType.GLOWING,
+                                    40,
+                                    4,
+                                    false,
+                                    false,
+                                    true));
                     player.addPotionEffect(
                             new PotionEffect(
                                     PotionEffectType.INVISIBILITY,

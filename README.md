@@ -1,11 +1,27 @@
 # SigilsMod
 A Paper plugin for SigilsSMP 1.21.11.
 
+## Contents
+* Features
+* What are Sigils?
+* Current Sigils...
+* Usage
+* Requirements
+* Building
+* Installation
+* Development
+* Roadmap
+
+## Features
+- Sigils!!!
+- Persistent Sigil identification using PDC
+- Custom crafting recipes :D
+
 ## What are Sigils?
 Sigils are powerful, unique items that grant their wielder special abilities. 
 Each Sigil has its own effect and most are extremely valuable.
 
-## Sigils
+## Current Sigils...
 | Sigil | Effect |
 |---|---|
 | Strength | Strength III |
@@ -21,11 +37,6 @@ Each Sigil has its own effect and most are extremely valuable.
 | Turtle | Resistance V + Slowness IV |
 | Concealment | Invisibility |
 | Verity (unobtainable) | hey its me its verity |
-
-## Features
-- Sigils!!!
-- Persistent Sigil identification using PDC
-- Custom crafting recipes :D
 
 ## Usage
 `/sigil give <player> <sigil>`
