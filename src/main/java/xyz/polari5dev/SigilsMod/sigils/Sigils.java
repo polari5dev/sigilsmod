@@ -9,6 +9,18 @@ import org.bukkit.persistence.PersistentDataType;
 
 public class Sigils {
 
+    public static boolean isSigil(ItemStack item) {
+        if (item == null || !item.hasItemMeta()) {
+            return false;
+        }
+
+        NamespacedKey key = new NamespacedKey("sigilsmod", "sigil_type");
+
+        return item.getItemMeta()
+                .getPersistentDataContainer()
+                .has(key, PersistentDataType.STRING);
+    }
+
     public static ItemStack create(String type) {
         if (type == null) {
             return null;

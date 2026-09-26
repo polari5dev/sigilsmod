@@ -4,6 +4,7 @@ import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
 import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -149,6 +150,15 @@ public class SigilsMod extends JavaPlugin {
 
         }
 
+        private boolean hasSigil(Player player) {
+                for (ItemStack item : player.getInventory().getContents()) {
+                        if (Sigils.isSigil(item)) {
+                                return true;
+                        }
+                }
+                return false;
+        }
+
         private void registerSigils() {
 
                 // strength
@@ -173,7 +183,7 @@ public class SigilsMod extends JavaPlugin {
                                 null);
 
                 // mending !!!!!!!!!!!!!!!!
-                sigilsHelper("speed_sigil", "speed", "SxS", "N D", "SES", 'x', Material.AMETHYST_CLUSTER, '\0',
+                sigilsHelper("mending_sigil", "mending", "SxS", "N D", "SES", 'x', Material.AMETHYST_CLUSTER, '\0',
                                 null);
 
                 // poison

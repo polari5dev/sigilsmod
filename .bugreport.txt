@@ -1,6 +1,6 @@
 > Task :clean
 
-> Task :compileJava FAILED
+> Task :compileJava FAILEDw
 
 [Incubating] Problems report is available at: file:///home/polaris/Projects/SigilsMod/build/reports/problems/problems-report.html
 
