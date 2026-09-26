@@ -4,8 +4,11 @@ gradle/
 build/
 target/
 
-# resourcepack
-/SigilsSMPResourcePack
+# bin
+bin/
+
+# target
+target/
 
 # IDE
 vscode/
