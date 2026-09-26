@@ -53,11 +53,12 @@ Built with Java and Gradle.
 Package: `xyz.polari5dev.SigilsMod`
 
 ## Roadmap
+- (perpetual) Update README
 - [X] More Sigils
 - [X] Working crafting recipe
-- [ ] More crafting recipes
+- [X] More crafting recipes
 - [ ] Add glow effect into included potion effects
 - [ ] Sigil uniqueness/crafting restrictions (only one of each at a time!)
 - [ ] Container restrictions (cannot store in chests)
-- [ ] Sigil destruction signal (allow crafting another if existing sigil is destroyed)
+- [ ] Sigil destruction signal (only allow crafting another if existing sigil is destroyed)
 - [ ] Better command feedback (autocomplete, help menu, etc)
