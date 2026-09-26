@@ -68,8 +68,7 @@ Package: `xyz.polari5dev.SigilsMod`
 - [X] More Sigils
 - [X] Working crafting recipe
 - [X] More crafting recipes
-- [ ] Add glow effect into included potion effects
-- [ ] Sigil uniqueness/crafting restrictions (only one of each at a time!)
-- [ ] Container restrictions (cannot store in chests)
-- [ ] Sigil destruction signal (only allow crafting another if existing sigil is destroyed)
+- [X] Add glow effect into included potion effects
+- [X] Sigil uniqueness/crafting restrictions (only one of each at a time!)
+- [X] Container restrictions (cannot store in chests)
 - [ ] Better command feedback (autocomplete, help menu, etc)
