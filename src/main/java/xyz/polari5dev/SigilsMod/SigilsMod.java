@@ -1,6 +1,9 @@
 package xyz.polari5dev.SigilsMod;
 
 import org.bukkit.Material;
+import org.bukkit.inventory.ItemStack;
+
+import org.bukkit.Bukkit;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -27,6 +30,93 @@ public class SigilsMod extends JavaPlugin {
         }
 
         private void registerRecipes() {
+
+                registerEasyRecipes();
+                registerHardRecipes();
+                registerSigils();
+
+        }
+
+        private void registerEasyRecipes() {
+
+                // ez gaps recipe
+
+                NamespacedKey vkey = NamespacedKey.minecraft("golden_apple");
+
+                // remove hard gapple recipe
+                Bukkit.getServer().removeRecipe(vkey, true);
+
+                // declare new gapple
+                NamespacedKey key = new NamespacedKey(this, "easy_golden_apple");
+
+                // set new gapple to gapple
+                ItemStack product = new ItemStack(Material.GOLDEN_APPLE);
+
+                // make recipe, public it
+                ShapedRecipe recipe = new ShapedRecipe(key, product);
+                recipe.shape(
+                                " G ",
+                                "GAG",
+                                " G ");
+                recipe.setIngredient('G', Material.GOLD_INGOT);
+                recipe.setIngredient('A', Material.APPLE);
+
+                // accly add the recipe
+                Bukkit.getServer().addRecipe(recipe);
+
+                // xp bottles
+                key = new NamespacedKey(this, "easy_xp_bottle");
+                product = new ItemStack(Material.EXPERIENCE_BOTTLE, 4);
+                recipe = new ShapedRecipe(key, product);
+                recipe.shape(
+                                " s ", // xp source
+                                " g ", // make throwable
+                                " b ");// bottle
+                recipe.setIngredient('s', Material.SCULK);
+                recipe.setIngredient('g', Material.GUNPOWDER);
+                recipe.setIngredient('b', Material.GLASS_BOTTLE);
+                Bukkit.getServer().addRecipe(recipe);
+
+                // webs
+                key = new NamespacedKey(this, "easy_cobweb");
+                product = new ItemStack(Material.COBWEB);
+                recipe = new ShapedRecipe(key, product);
+                recipe.shape(
+                                "s s",
+                                " s ",
+                                "s s");
+                recipe.setIngredient('s', Material.STRING);
+                Bukkit.getServer().addRecipe(recipe);
+
+                // you all know the rest.
+
+                // i don't have to document the rest of this, do i?
+
+                // hope not.
+
+        }
+
+        private void registerHardRecipes() {
+
+                // mace
+                NamespacedKey vkey = NamespacedKey.minecraft("mace");
+                Bukkit.getServer().removeRecipe(vkey, true);
+                NamespacedKey key = new NamespacedKey(this, "hard_mace");
+                ItemStack product = new ItemStack(Material.MACE);
+                ShapedRecipe recipe = new ShapedRecipe(key, product);
+                recipe.shape(
+                                "HIH",
+                                " B ",
+                                " B ");
+                recipe.setIngredient('H', Material.HEAVY_CORE);
+                recipe.setIngredient('I', Material.IRON_INGOT);
+                recipe.setIngredient('B', Material.BREEZE_ROD);
+
+                // accly add the recipe
+                Bukkit.getServer().addRecipe(recipe);
+        }
+
+        private void registerSigils() {
 
                 // strength
                 NamespacedKey key = new NamespacedKey(this, "strength_sigil");
@@ -133,7 +223,7 @@ public class SigilsMod extends JavaPlugin {
                 // poison
                 key = new NamespacedKey(this, "poison_sigil");
 
-                recipe = new ShapedRecipe(key, Sigils.create("haste"));
+                recipe = new ShapedRecipe(key, Sigils.create("poison"));
 
                 recipe.shape(
                                 "SeS",
@@ -238,5 +328,4 @@ public class SigilsMod extends JavaPlugin {
         public void onDisable() {
                 getLogger().info(getDescription().getName() + " has been disabled! Goodbye!");
         }
-
 }
