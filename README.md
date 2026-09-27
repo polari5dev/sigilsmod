@@ -16,6 +16,9 @@ A Paper plugin for SigilsSMP 1.21.11.
 - Sigils!!!
 - Persistent Sigil identification using PDC
 - Custom crafting recipes :D
+- Sigils cannot be stored in chests
+- Players cannot hold more than one sigil at a time
+- Players cannot craft the same kind of sigil if it already exists (dropped or in a player inventory)
 
 ## What are Sigils?
 Sigils are powerful, unique items that grant their wielder special abilities. 
