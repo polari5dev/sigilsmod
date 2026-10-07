@@ -19,6 +19,11 @@ import org.bukkit.event.inventory.InventoryDragEvent;
 import org.bukkit.event.entity.EntityPickupItemEvent;
 import org.bukkit.event.inventory.PrepareItemCraftEvent;
 
+import org.bukkit.block.Block;
+import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.InventoryHolder;
+import org.bukkit.inventory.ItemStack;
+
 public class PlayerListener implements Listener {
 
         @EventHandler
@@ -473,12 +478,51 @@ public class PlayerListener implements Listener {
                 }
 
                 ItemStack clicked = event.getCurrentItem();
+                ItemStack cursor = event.getCursor();
 
+                Inventory topInventory = event.getView().getTopInventory();
+                InventoryHolder holder = topInventory.getHolder();
+
+                // Prevent sigils from being stored in containers
+                if (isSigil(cursor) && isBlockedContainer(holder)) {
+                        event.setCancelled(true);
+                        return;
+                }
+
+                // Prevent shift-clicking a second sigil into the player's inventory
                 if (event.isShiftClick() && isSigil(clicked)) {
                         if (hasSigil(player, clicked)) {
                                 event.setCancelled(true);
                         }
                 }
+        }
+
+        private boolean isBlockedContainer(InventoryHolder holder) {
+                if (holder instanceof org.bukkit.block.Furnace) {
+                        return true;
+                }
+
+                if (holder instanceof org.bukkit.block.BrewingStand) {
+                        return true;
+                }
+
+                if (holder instanceof org.bukkit.block.Hopper) {
+                        return true;
+                }
+
+                if (holder instanceof org.bukkit.block.Dropper) {
+                        return true;
+                }
+
+                if (holder instanceof org.bukkit.block.Dispenser) {
+                        return true;
+                }
+
+                if (holder instanceof org.bukkit.block.Crafter) {
+                        return true;
+                }
+
+                return false;
         }
 
         // // prevent dragging into inv if hasSigil(player) is true
