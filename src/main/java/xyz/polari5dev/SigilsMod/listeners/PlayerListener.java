@@ -16,6 +16,8 @@ import org.bukkit.entity.Player;
 
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryDragEvent;
+import org.bukkit.event.inventory.InventoryMoveItemEvent;
+import org.bukkit.event.inventory.InventoryPickupItemEvent;
 import org.bukkit.event.entity.EntityPickupItemEvent;
 import org.bukkit.event.inventory.PrepareItemCraftEvent;
 
@@ -477,22 +479,84 @@ public class PlayerListener implements Listener {
                         return;
                 }
 
-                ItemStack clicked = event.getCurrentItem();
-                ItemStack cursor = event.getCursor();
+                Inventory top = event.getView().getTopInventory();
+                boolean blocked = isBlockedContainer(top.getHolder());
 
-                Inventory topInventory = event.getView().getTopInventory();
-                InventoryHolder holder = topInventory.getHolder();
+                if (!blocked) {
+                        // Still prevent carrying a second sigil via shift-click.
+                        if (event.isShiftClick() && isSigil(event.getCurrentItem())
+                                        && hasSigil(player, event.getCurrentItem())) {
+                                event.setCancelled(true);
+                        }
+                        return;
+                }
 
-                // Prevent sigils from being stored in containers
-                if (isSigil(cursor) && isBlockedContainer(holder)) {
+                int rawSlot = event.getRawSlot();
+                boolean clickedTop = rawSlot >= 0 && rawSlot < top.getSize();
+
+                // Placing a sigil from the cursor into the container.
+                if (clickedTop && isSigil(event.getCursor())) {
                         event.setCancelled(true);
                         return;
                 }
 
-                // Prevent shift-clicking a second sigil into the player's inventory
-                if (event.isShiftClick() && isSigil(clicked)) {
-                        if (hasSigil(player, clicked)) {
+                // Shift-clicking a sigil from the player's inventory.
+                if (event.isShiftClick() && isSigil(event.getCurrentItem())) {
+                        event.setCancelled(true);
+                        return;
+                }
+
+                // Number-key swaps and offhand swaps can bypass ordinary cursor checks.
+                if (clickedTop && event.getClick().name().contains("NUMBER_KEY")
+                                && isSigil(player.getInventory().getItem(event.getHotbarButton()))) {
+                        event.setCancelled(true);
+                        return;
+                }
+
+                if (clickedTop && event.getClick().name().equals("SWAP_OFFHAND")
+                                && isSigil(player.getInventory().getItemInOffHand())) {
+                        event.setCancelled(true);
+                }
+        }
+
+        @EventHandler
+        public void onInventoryPickup(InventoryPickupItemEvent event) {
+                if (!isSigil(event.getItem().getItemStack())) {
+                        return;
+                }
+
+                if (isBlockedContainer(event.getInventory().getHolder())) {
+                        event.setCancelled(true);
+                }
+        }
+
+        @EventHandler
+        public void onInventoryMove(InventoryMoveItemEvent event) {
+                if (!isSigil(event.getItem())) {
+                        return;
+                }
+
+                if (isBlockedContainer(event.getDestination().getHolder())) {
+                        event.setCancelled(true);
+                }
+        }
+
+        @EventHandler
+        public void onInventoryDrag(InventoryDragEvent event) {
+                if (!isSigil(event.getOldCursor())) {
+                        return;
+                }
+
+                Inventory top = event.getView().getTopInventory();
+
+                if (!isBlockedContainer(top.getHolder())) {
+                        return;
+                }
+
+                for (int rawSlot : event.getRawSlots()) {
+                        if (rawSlot >= 0 && rawSlot < top.getSize()) {
                                 event.setCancelled(true);
+                                return;
                         }
                 }
         }
@@ -524,21 +588,4 @@ public class PlayerListener implements Listener {
 
                 return false;
         }
-
-        // // prevent dragging into inv if hasSigil(player) is true
-        // @EventHandler
-        // public void onInventoryDrag(InventoryDragEvent event) {
-        // if (!(event.getWhoClicked() instanceof Player player)) {
-        // return;
-        // }
-        //
-        // if (!isSigil(event.getOldCursor())) {
-        // return;
-        // }
-        //
-        // // if player has sigil, don't allow another
-        // if (hasSigil(player)) {
-        // event.setCancelled(true);
-        // }
-        // }add this in later...
 }
